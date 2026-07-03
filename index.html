@@ -1,28 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mustafa & Zerrin | Nişan Davetiyesi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="page-shell">
-    <section class="invite-card">
-      <button class="music-button" type="button" aria-label="Müzik aç/kapat">♪</button>
-
-      <div class="frame frame-a"></div>
-      <div class="frame frame-b"></div>
+    <section class="invitation">
+      <div class="gold-frame frame-a"></div>
+      <div class="gold-frame frame-b"></div>
+      <div class="marble"></div>
       <div class="flower flower-left" aria-hidden="true"></div>
       <div class="flower flower-right" aria-hidden="true"></div>
+      <div class="top-symbol">❦</div>
 
-      <header class="hero">
-        <div class="monogram">MZ</div>
-        <p class="eyebrow">NİŞANIMIZA</p>
-        <p class="eyebrow">DAVETLİSİNİZ</p>
+      <section class="hero">
+        <p class="micro">NİŞANIMIZA</p>
+        <p class="micro">DAVETLİSİNİZ</p>
 
         <h1>
           <span id="brideName">ZERRİN</span>
@@ -30,36 +29,35 @@
           <span id="groomName">MUSTAFA</span>
         </h1>
 
-        <p id="guestMessage" class="guest-message"></p>
+        <p id="guestMessage" class="guest"></p>
         <p class="intro">Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.</p>
-      </header>
+      </section>
 
-      <section class="info-grid" aria-label="Nişan detayları">
+      <section class="info-row">
         <article class="info-item">
-          <div class="icon">▣</div>
-          <p>TARİH</p>
+          <div class="icon calendar"></div>
+          <b>TARİH</b>
           <strong id="eventDateText">31 Temmuz 2026</strong>
           <small id="eventDayText">Cuma</small>
         </article>
         <article class="info-item">
-          <div class="icon">◷</div>
-          <p>SAAT</p>
+          <div class="icon clock"></div>
+          <b>SAAT</b>
           <strong id="eventTimeText">19:30</strong>
-          <small>Başlangıç</small>
         </article>
         <article class="info-item">
-          <div class="icon">⌖</div>
-          <p>MEKAN</p>
+          <div class="icon pin"></div>
+          <b>MEKAN</b>
           <strong id="venueName">Barış'ın Çiftlik Evi</strong>
-          <small id="cityText">Eyüpsultan / İstanbul</small>
+          <small id="venueCity">Eyüpsultan / İstanbul</small>
         </article>
       </section>
 
-      <a id="mapButton" class="gold-button" target="_blank" rel="noopener">YOL TARİFİ AL</a>
+      <a class="direction-btn" id="mapButton" href="#" target="_blank" rel="noopener">YOL TARİFİ AL</a>
 
-      <section class="countdown-section">
+      <section class="countdown-block">
+        <div class="divider"></div>
         <h2>NİŞANIMIZA KALAN SÜRE</h2>
-        <div class="divider"><span>♡</span></div>
         <div class="countdown">
           <div><strong id="days">00</strong><span>GÜN</span></div>
           <div><strong id="hours">00</strong><span>SAAT</span></div>
@@ -68,22 +66,12 @@
         </div>
       </section>
 
-      <section class="location-card">
-        <div>
-          <p class="label">KONUM</p>
-          <h3>Barış'ın Çiftlik Evi</h3>
-          <p>Ağaçlı, Karaağaç Sokak No:16<br>Eyüpsultan / İstanbul</p>
-        </div>
-        <a id="mapButtonSmall" target="_blank" rel="noopener">Haritada Aç</a>
-      </section>
-
       <section class="rsvp">
         <h2>KATILIM DURUMU</h2>
-        <div class="divider"><span>♡</span></div>
         <p>Lütfen katılım durumunuzu bildirir misiniz?</p>
-        <div class="rsvp-buttons">
-          <a id="joinButton" target="_blank" rel="noopener">✓ KATILIYORUM</a>
-          <a id="notJoinButton" target="_blank" rel="noopener">× KATILAMIYORUM</a>
+        <div class="rsvp-actions">
+          <a id="joinButton" href="#" target="_blank" rel="noopener">✓ KATILIYORUM</a>
+          <a id="notJoinButton" href="#" target="_blank" rel="noopener">× KATILAMIYORUM</a>
         </div>
       </section>
 
