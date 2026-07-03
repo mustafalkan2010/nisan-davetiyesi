@@ -1,41 +1,56 @@
-const eventDate = new Date('2026-07-31T19:30:00+03:00');
-const whatsappNumber = '905397233079';
-const couple = 'Mustafa & Zerrin';
+const inviteData = {
+  bride: "ZERRİN",
+  groom: "MUSTAFA",
+  eventDate: "2026-07-31T19:30:00+03:00",
+  dateText: "31 Temmuz 2026",
+  dayText: "Cuma",
+  timeText: "19:30",
+  venue: "Barış'ın Çiftlik Evi",
+  city: "Eyüpsultan / İstanbul",
+  mapsUrl: "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIRCAEQLhgKGA0YrwEYxwEYgAQyCggCEAAYChgWGB4yBwgDEAAY7wUyCggEEAAYgAQYogQyCggFEAAYgAQYogTSAQgzNTI2ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=tr&sa=X&geocode=KV-nZDJI_Z9AMWyVIHyoCR4D&daddr=A%C4%9Fa%C3%A7l%C4%B1,+karaa%C4%9Fa%C3%A7+sokak+No:16,+34076+Ey%C3%BCpsultan/%C4%B0stanbul",
+  whatsappNumber: "905397233079"
+};
 
-const params = new URLSearchParams(location.search);
-const guest = params.get('guest');
-const id = params.get('id') || '';
+const $ = (id) => document.getElementById(id);
+$("brideName").textContent = inviteData.bride;
+$("groomName").textContent = inviteData.groom;
+$("eventDateText").textContent = inviteData.dateText;
+$("eventDayText").textContent = inviteData.dayText;
+$("eventTimeText").textContent = inviteData.timeText;
+$("venueName").textContent = inviteData.venue;
+$("venueCity").textContent = inviteData.city;
+$("mapButton").href = inviteData.mapsUrl;
 
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("guest");
+const guestId = params.get("id") || "-";
 if (guest) {
-  document.getElementById('guestLine').textContent = `Sevgili ${guest}, bu davetiye sizin için hazırlanmıştır.`;
+  const g = $("guestMessage");
+  g.textContent = `Sevgili ${guest}, sizi aramızda görmekten mutluluk duyarız.`;
+  g.classList.add("show");
 }
 
-function pad(n){ return String(n).padStart(2,'0'); }
-function tick(){
-  const diff = eventDate - new Date();
+function pad(v){ return String(v).padStart(2,"0"); }
+function updateCountdown(){
+  const target = new Date(inviteData.eventDate).getTime();
+  const now = Date.now();
+  const diff = target - now;
   if(diff <= 0){
-    document.getElementById('days').textContent='00';
-    document.getElementById('hours').textContent='00';
-    document.getElementById('minutes').textContent='00';
-    document.getElementById('seconds').textContent='00';
+    document.querySelector(".countdown-block h2").textContent = "BU GÜZEL GÜN BAŞLADI";
+    ["days","hours","minutes","seconds"].forEach(id => $(id).textContent = "00");
     return;
   }
-  const d = Math.floor(diff/86400000);
-  const h = Math.floor(diff/3600000)%24;
-  const m = Math.floor(diff/60000)%60;
-  const s = Math.floor(diff/1000)%60;
-  document.getElementById('days').textContent = pad(d);
-  document.getElementById('hours').textContent = pad(h);
-  document.getElementById('minutes').textContent = pad(m);
-  document.getElementById('seconds').textContent = pad(s);
+  $("days").textContent = pad(Math.floor(diff / 86400000));
+  $("hours").textContent = pad(Math.floor((diff / 3600000) % 24));
+  $("minutes").textContent = pad(Math.floor((diff / 60000) % 60));
+  $("seconds").textContent = pad(Math.floor((diff / 1000) % 60));
 }
-tick(); setInterval(tick,1000);
+setInterval(updateCountdown,1000); updateCountdown();
 
-function wa(status){
-  const name = guest || 'Davetli';
-  const no = id ? `\nDavet No: ${id}` : '';
-  const text = encodeURIComponent(`Merhaba, ${couple} nişan davetine ${status}.\nDavetli: ${name}${no}`);
-  return `https://wa.me/${whatsappNumber}?text=${text}`;
+function whatsappUrl(status){
+  const name = guest || "Davetli";
+  const msg = `Merhaba, Mustafa & Zerrin nişan daveti için katılım durumum:\n\nDavetli: ${name}\nDavet No: ${guestId}\nDurum: ${status}`;
+  return `https://wa.me/${inviteData.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
-document.getElementById('joinBtn').href = wa('katılıyorum');
-document.getElementById('noBtn').href = wa('maalesef katılamıyorum');
+$("joinButton").href = whatsappUrl("KATILIYORUM");
+$("notJoinButton").href = whatsappUrl("KATILAMIYORUM");

@@ -1,98 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mustafa & Zerrin | Nişan Davetiyesi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="invitation" aria-label="Mustafa ve Zerrin nişan davetiyesi">
-    <button class="music" type="button" aria-label="Müzik aç kapat">♪</button>
+  <main class="page-shell">
+    <section class="invitation">
+      <div class="gold-frame frame-a"></div>
+      <div class="gold-frame frame-b"></div>
+      <div class="marble"></div>
+      <div class="flower flower-left" aria-hidden="true"></div>
+      <div class="flower flower-right" aria-hidden="true"></div>
+      <div class="top-symbol">❦</div>
 
-    <div class="frame frame-outer"></div>
-    <div class="frame frame-inner"></div>
-    <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
-    <div class="roof"><span></span><span></span></div>
+      <section class="hero">
+        <p class="micro">NİŞANIMIZA</p>
+        <p class="micro">DAVETLİSİNİZ</p>
 
-    <section class="flowers flowers-left" aria-hidden="true">
-      <div class="stem s1"></div><div class="stem s2"></div><div class="stem s3"></div>
-      <i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i><i class="leaf l4"></i><i class="leaf l5"></i><i class="leaf l6"></i><i class="leaf l7"></i><i class="leaf l8"></i>
-      <i class="bud b1"></i><i class="bud b2"></i><i class="bud b3"></i>
-      <div class="bloom big"><span></span><span></span><span></span><span></span><span></span><em></em></div>
-      <div class="bloom small"><span></span><span></span><span></span><span></span><span></span><em></em></div>
-      <div class="dots"></div>
+        <h1>
+          <span id="brideName">ZERRİN</span>
+          <em>&</em>
+          <span id="groomName">MUSTAFA</span>
+        </h1>
+
+        <p id="guestMessage" class="guest"></p>
+        <p class="intro">Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.</p>
+      </section>
+
+      <section class="info-row">
+        <article class="info-item">
+          <div class="icon calendar"></div>
+          <b>TARİH</b>
+          <strong id="eventDateText">31 Temmuz 2026</strong>
+          <small id="eventDayText">Cuma</small>
+        </article>
+        <article class="info-item">
+          <div class="icon clock"></div>
+          <b>SAAT</b>
+          <strong id="eventTimeText">19:30</strong>
+        </article>
+        <article class="info-item">
+          <div class="icon pin"></div>
+          <b>MEKAN</b>
+          <strong id="venueName">Barış'ın Çiftlik Evi</strong>
+          <small id="venueCity">Eyüpsultan / İstanbul</small>
+        </article>
+      </section>
+
+      <a class="direction-btn" id="mapButton" href="#" target="_blank" rel="noopener">YOL TARİFİ AL</a>
+
+      <section class="countdown-block">
+        <div class="divider"></div>
+        <h2>NİŞANIMIZA KALAN SÜRE</h2>
+        <div class="countdown">
+          <div><strong id="days">00</strong><span>GÜN</span></div>
+          <div><strong id="hours">00</strong><span>SAAT</span></div>
+          <div><strong id="minutes">00</strong><span>DAKİKA</span></div>
+          <div><strong id="seconds">00</strong><span>SANİYE</span></div>
+        </div>
+      </section>
+
+      <section class="rsvp">
+        <h2>KATILIM DURUMU</h2>
+        <p>Lütfen katılım durumunuzu bildirir misiniz?</p>
+        <div class="rsvp-actions">
+          <a id="joinButton" href="#" target="_blank" rel="noopener">✓ KATILIYORUM</a>
+          <a id="notJoinButton" href="#" target="_blank" rel="noopener">× KATILAMIYORUM</a>
+        </div>
+      </section>
+
+      <footer>
+        <span>♡</span>
+        <p>Sevgilerimizle</p>
+      </footer>
     </section>
-
-    <section class="flowers flowers-right" aria-hidden="true">
-      <div class="stem s1"></div><div class="stem s2"></div><div class="stem s3"></div>
-      <i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i><i class="leaf l4"></i><i class="leaf l5"></i><i class="leaf l6"></i><i class="leaf l7"></i><i class="leaf l8"></i>
-      <i class="bud b1"></i><i class="bud b2"></i><i class="bud b3"></i>
-      <div class="bloom big"><span></span><span></span><span></span><span></span><span></span><em></em></div>
-      <div class="bloom small"><span></span><span></span><span></span><span></span><span></span><em></em></div>
-      <div class="dots"></div>
-    </section>
-
-    <section class="hero">
-      <div class="ornament">✥</div>
-      <p class="invite-text">NİŞANIMIZA<br>DAVETLİSİNİZ</p>
-      <p id="guestLine" class="guest-line"></p>
-      <h1><span>ZERRİN</span><em>&</em><span>MUSTAFA</span></h1>
-      <p class="desc">Bu özel günümüzde sizleri de<br>aramızda görmekten mutluluk duyarız.</p>
-    </section>
-
-    <section class="info-row">
-      <div class="info-item">
-        <div class="ico calendar"></div>
-        <strong>31 TEMMUZ 2026</strong>
-        <span>CUMA</span>
-      </div>
-      <div class="divider"><b></b></div>
-      <div class="info-item">
-        <div class="ico clock"></div>
-        <strong>19:30</strong>
-        <span>BAŞLANGIÇ</span>
-      </div>
-      <div class="divider"><b></b></div>
-      <div class="info-item">
-        <div class="ico pin"></div>
-        <strong>BARIŞ’IN ÇİFTLİK EVİ</strong>
-        <span>EYÜPSULTAN / İSTANBUL</span>
-      </div>
-    </section>
-
-    <a class="route" target="_blank" rel="noopener" href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIRCAEQLhgKGA0YrwEYxwEYgAQyCggCEAAYChgWGB4yBwgDEAAY7wUyCggEEAAYgAQYogQyCggFEAAYgAQYogTSAQgzNTI2ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=tr&sa=X&geocode=KV-nZDJI_Z9AMWyVIHyoCR4D&daddr=A%C4%9Fa%C3%A7l%C4%B1,+karaa%C4%9Fa%C3%A7+sokak+No:16,+34076+Ey%C3%BCpsultan/%C4%B0stanbul">
-      <span class="pin-mini"></span> YOL TARİFİ AL
-    </a>
-
-    <section class="count-section">
-      <div class="sep"></div>
-      <h2>NİŞANIMIZA KALAN SÜRE</h2>
-      <div class="mini-heart">♡</div>
-      <div class="countdown" id="countdown">
-        <div><strong id="days">00</strong><span>GÜN</span></div>
-        <div><strong id="hours">00</strong><span>SAAT</span></div>
-        <div><strong id="minutes">00</strong><span>DAKİKA</span></div>
-        <div><strong id="seconds">00</strong><span>SANİYE</span></div>
-      </div>
-    </section>
-
-    <section class="rsvp">
-      <div class="sep"></div>
-      <h2>KATILIM DURUMU</h2>
-      <div class="mini-heart">♡</div>
-      <p>Lütfen katılım durumunuzu bildirir misiniz?</p>
-      <div class="actions">
-        <a id="joinBtn" href="#" target="_blank" rel="noopener">✓ KATILIYORUM</a>
-        <a id="noBtn" href="#" target="_blank" rel="noopener">× KATILAMIYORUM</a>
-      </div>
-    </section>
-
-    <footer><div>♡</div><p>Sevgilerimizle</p></footer>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
