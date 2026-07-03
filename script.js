@@ -23,7 +23,6 @@ $("mapButton").href = inviteData.mapsUrl;
 
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("guest");
-const guestId = params.get("id") || "-";
 if (guest) {
   const g = $("guestMessage");
   g.textContent = `Sevgili ${guest}, sizi aramızda görmekten mutluluk duyarız.`;
@@ -49,7 +48,7 @@ setInterval(updateCountdown,1000); updateCountdown();
 
 function whatsappUrl(status){
   const name = guest || "Davetli";
-  const msg = `Merhaba, Mustafa & Zerrin nişan daveti için katılım durumum:\n\nDavetli: ${name}\nDavet No: ${guestId}\nDurum: ${status}`;
+  const msg = `Merhaba, Mustafa & Zerrin nişan daveti için katılım durumum:\n\nDavetli: ${name}\nDurum: ${status}`;
   return `https://wa.me/${inviteData.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
 $("joinButton").href = whatsappUrl("KATILIYORUM");
