@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nişan Davetiyesi</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="invite-card">
+
+    <div class="corner-line top-left"></div>
+    <div class="corner-line bottom-right"></div>
+
+    <div class="flower flower-left">✿</div>
+    <div class="flower flower-right">✿</div>
+
+    <section class="hero">
+      <div class="ornament">❦</div>
+
+      <p class="small-title">NİŞANIMIZA</p>
+      <p class="small-title">DAVETLİSİNİZ</p>
+
+      <h1>
+        <span id="brideName">SENA</span>
+        <em>&</em>
+        <span id="groomName">BURAK</span>
+      </h1>
+
+      <p id="guestMessage" class="guest-message"></p>
+
+      <p class="description">
+        Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.
+      </p>
+    </section>
+
+    <section class="details">
+      <div class="detail-box">
+        <div class="icon">📅</div>
+        <span>TARİH</span>
+        <strong id="eventDateText">20 Haziran 2026</strong>
+        <small>Cumartesi</small>
+      </div>
+
+      <div class="detail-box">
+        <div class="icon">🕘</div>
+        <span>SAAT</span>
+        <strong id="eventTimeText">19:00</strong>
+      </div>
+
+      <div class="detail-box">
+        <div class="icon">📍</div>
+        <span>MEKAN</span>
+        <strong id="venueName">Hilton İstanbul Bosphorus</strong>
+        <small>Beşiktaş / İstanbul</small>
+      </div>
+    </section>
+
+    <a id="mapButton" class="map-button" href="#" target="_blank">
+      📍 YOL TARİFİ AL
+    </a>
+
+    <section class="countdown-section">
+      <h2>NİŞANIMIZA KALAN SÜRE</h2>
+
+      <div class="countdown">
+        <div>
+          <strong id="days">00</strong>
+          <span>GÜN</span>
+        </div>
+        <div>
+          <strong id="hours">00</strong>
+          <span>SAAT</span>
+        </div>
+        <div>
+          <strong id="minutes">00</strong>
+          <span>DAKİKA</span>
+        </div>
+        <div>
+          <strong id="seconds">00</strong>
+          <span>SANİYE</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp">
+      <h2>KATILIM DURUMU</h2>
+      <p>Lütfen katılım durumunuzu bildirir misiniz?</p>
+
+      <div class="rsvp-buttons">
+        <a id="joinButton" href="#" target="_blank">✓ KATILIYORUM</a>
+        <a id="notJoinButton" href="#" target="_blank">× KATILAMIYORUM</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="heart">♡</div>
+      <p>Sevgilerimizle</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
