@@ -48,7 +48,7 @@ setInterval(updateCountdown,1000); updateCountdown();
 
 function whatsappUrl(status){
   const name = guest || "Davetli";
-  const msg = `Merhaba, Mustafa & Zerrin nişan daveti için katılım durumum::\n\nDavetli: ${name}\nDurum: ${status}`;
+  const msg = `Merhaba, Mustafa & Zerrin nişan daveti için katılım durumum:\n\nDavetli: ${name}\nDurum: ${status}`;
   return `https://wa.me/${inviteData.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
 $("joinButton").href = whatsappUrl("KATILIYORUM");
