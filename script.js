@@ -1,41 +1,35 @@
-const eventDate = new Date('2026-07-31T19:30:00+03:00').getTime();
+const eventDate = new Date('2026-07-31T19:30:00+03:00');
 const whatsappNumber = '905397233079';
 
 const params = new URLSearchParams(window.location.search);
 const guest = params.get('guest');
-const inviteId = params.get('id');
 
-const guestEl = document.getElementById('guestName');
-if (guest && guest.trim()) {
-  guestEl.textContent = `Sevgili ${guest}`;
-  guestEl.classList.add('show');
+const guestLine = document.getElementById('guestLine');
+if (guest) {
+  guestLine.textContent = `Sevgili ${guest}`;
+  guestLine.classList.add('show');
 }
 
-function updateCountdown(){
-  const now = Date.now();
-  const distance = eventDate - now;
-  if(distance <= 0){
-    document.querySelector('.countdown-block h2').textContent = 'BU GÜZEL GÜN BAŞLADI';
-    ['days','hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '00');
-    return;
-  }
-  const d = Math.floor(distance / (1000*60*60*24));
-  const h = Math.floor((distance / (1000*60*60)) % 24);
-  const m = Math.floor((distance / (1000*60)) % 60);
-  const s = Math.floor((distance / 1000) % 60);
-  document.getElementById('days').textContent = String(d).padStart(2,'0');
-  document.getElementById('hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('minutes').textContent = String(m).padStart(2,'0');
-  document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+function pad(n){ return String(n).padStart(2,'0'); }
+function tick(){
+  const diff = eventDate.getTime() - Date.now();
+  const safe = Math.max(0, diff);
+  const days = Math.floor(safe / 86400000);
+  const hours = Math.floor((safe % 86400000) / 3600000);
+  const minutes = Math.floor((safe % 3600000) / 60000);
+  const seconds = Math.floor((safe % 60000) / 1000);
+  document.getElementById('days').textContent = pad(days);
+  document.getElementById('hours').textContent = pad(hours);
+  document.getElementById('minutes').textContent = pad(minutes);
+  document.getElementById('seconds').textContent = pad(seconds);
 }
-updateCountdown();
-setInterval(updateCountdown, 1000);
+tick();
+setInterval(tick, 1000);
 
 function makeMessage(status){
-  const who = guest ? `\nDavetli: ${guest}` : '';
-  const id = inviteId ? `\nDavet No: ${inviteId}` : '';
-  return encodeURIComponent(`Merhaba, Mustafa & Zerrin nişan davetine ${status}.${who}${id}`);
+  const nameLine = guest ? `\nDavetli: ${guest}` : '';
+  return encodeURIComponent(`Merhaba, Mustafa & Zerrin nişan daveti için katılım durumum: ${status}.${nameLine}`);
 }
 
-document.getElementById('joinButton').href = `https://wa.me/${whatsappNumber}?text=${makeMessage('katılıyorum')}`;
-document.getElementById('notJoinButton').href = `https://wa.me/${whatsappNumber}?text=${makeMessage('maalesef katılamıyorum')}`;
+document.getElementById('joinButton').href = `https://wa.me/${whatsappNumber}?text=${makeMessage('KATILIYORUM')}`;
+document.getElementById('notJoinButton').href = `https://wa.me/${whatsappNumber}?text=${makeMessage('KATILAMIYORUM')}`;
