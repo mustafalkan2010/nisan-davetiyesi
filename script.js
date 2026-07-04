@@ -13,53 +13,90 @@ const inviteData = {
 
 const $ = (id) => document.getElementById(id);
 
+function setScale(){
+  const cardW = 760;
+  const viewportW = window.innerWidth;
+  const desktopMaxScale = 1;
+  const scale = Math.min(desktopMaxScale, viewportW / cardW);
+  document.documentElement.style.setProperty('--scale', scale.toFixed(5));
+}
+window.addEventListener('resize', setScale);
+window.addEventListener('orientationchange', setScale);
+setScale();
+
 $("brideName").textContent = inviteData.bride;
 $("groomName").textContent = inviteData.groom;
-$("eventDateText").textContent = inviteData.dateText;
-$("eventDayText").textContent = inviteData.dayText;
-$("eventTimeText").textContent = inviteData.timeText;
-$("venueName").textContent = inviteData.venue;
-$("venueCity").textContent = inviteData.city;
-$("mapButton").href = inviteData.mapsUrl;
+$("dateText").textContent = inviteData.dateText;
+$("dayText").textContent = inviteData.dayText;
+$("timeText").textContent = inviteData.timeText;
+$("venueText").textContent = inviteData.venue;
+$("cityText").textContent = inviteData.city;
+$("mapLink").href = inviteData.mapsUrl;
 
 const params = new URLSearchParams(window.location.search);
-const guest = params.get("guest") || "";
-
-if (guest.trim()) {
-  $("guestLine").textContent = `Sevgili ${guest}`;
+const guest = params.get("guest");
+if (guest) {
+  const decodedGuest = guest.trim();
+  $("guestLine").textContent = `Sevgili ${decodedGuest}`;
+  $("guestLine").classList.add("show");
 }
 
-function updateCountdown() {
-  const eventTime = new Date(inviteData.eventDate).getTime();
-  const now = Date.now();
-  const distance = eventTime - now;
-
-  if (distance <= 0) {
+function pad(n){ return String(n).padStart(2,"0"); }
+function updateCountdown(){
+  const target = new Date(inviteData.eventDate).getTime();
+  const diff = target - Date.now();
+  if (diff <= 0) {
     document.querySelector(".countdown-section h2").textContent = "BU GÜZEL GÜN BAŞLADI";
-    ["days", "hours", "minutes", "seconds"].forEach(id => $(id).textContent = "00");
+    ["days","hours","minutes","seconds"].forEach(id => $(id).textContent = "00");
     return;
   }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
-
-  $("days").textContent = String(days).padStart(2, "0");
-  $("hours").textContent = String(hours).padStart(2, "0");
-  $("minutes").textContent = String(minutes).padStart(2, "0");
-  $("seconds").textContent = String(seconds).padStart(2, "0");
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const minutes = Math.floor((diff % 3600000) / 60000);
+  const seconds = Math.floor((diff % 60000) / 1000);
+  $("days").textContent = pad(days);
+  $("hours").textContent = pad(hours);
+  $("minutes").textContent = pad(minutes);
+  $("seconds").textContent = pad(seconds);
 }
-
-function buildWhatsappMessage(status) {
-  const guestLine = guest ? `\nDavetli: ${guest}` : "";
-  return encodeURIComponent(
-    `Merhaba, Mustafa & Zerrin nişan daveti için katılım durumum: ${status}.${guestLine}`
-  );
-}
-
-$("joinButton").href = `https://wa.me/${inviteData.whatsappNumber}?text=${buildWhatsappMessage("KATILIYORUM")}`;
-$("notJoinButton").href = `https://wa.me/${inviteData.whatsappNumber}?text=${buildWhatsappMessage("KATILAMIYORUM")}`;
-
-setInterval(updateCountdown, 1000);
 updateCountdown();
+setInterval(updateCountdown, 1000);
+
+function whatsappMessage(status){
+  const guestText = guest ? `\nDavetli: ${guest}` : "";
+  return encodeURIComponent(`Merhaba, Mustafa & Zerrin nişan davetiniz için teşekkür ederim katılım durumum: ${status}\n${guestText}`);
+}
+$("joinBtn").href = `https://wa.me/${inviteData.whatsappNumber}?text=${whatsappMessage("KATILIYORUM")}`;
+$("notJoinBtn").href = `https://wa.me/${inviteData.whatsappNumber}?text=${whatsappMessage("KATILAMIYORUM")}`;
+
+const music = $("bgMusic");
+const musicBtn = $("musicBtn");
+
+function setMusicState(playing){
+  musicBtn.classList.toggle("playing", playing);
+  musicBtn.setAttribute("aria-label", playing ? "Müziği durdur" : "Müziği çal");
+}
+
+function tryAutoplay(){
+  music.play()
+    .then(() => setMusicState(true))
+    .catch(() => {
+      const startOnInteraction = () => {
+        music.play().then(() => setMusicState(true)).catch(() => {});
+      };
+      document.addEventListener("click", startOnInteraction, { once: true });
+      document.addEventListener("touchend", startOnInteraction, { once: true });
+      document.addEventListener("keydown", startOnInteraction, { once: true });
+    });
+}
+tryAutoplay();
+
+musicBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (music.paused) {
+    music.play().then(() => setMusicState(true)).catch(() => {});
+  } else {
+    music.pause();
+    setMusicState(false);
+  }
+});
