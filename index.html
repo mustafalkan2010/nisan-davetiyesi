@@ -1,94 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mustafa & Zerrin | Nişan Davetiyesi</title>
+  <meta name="description" content="Mustafa & Zerrin nişan davetiyesi" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="invite" aria-label="Nişan davetiyesi">
-      <div class="paper-texture"></div>
-      <div class="frame frame-main"></div>
-      <div class="frame-corner tl"></div>
-      <div class="frame-corner tr"></div>
-      <div class="frame-corner bl"></div>
-      <div class="frame-corner br"></div>
-      <button class="music" type="button" aria-label="Müzik">♪</button>
+  <div class="page-shell">
+    <article class="invite-card" aria-label="Nişan davetiyesi">
+      <div class="paper-texture" aria-hidden="true"></div>
+      <div class="frame frame-outer" aria-hidden="true"></div>
+      <div class="frame frame-inner" aria-hidden="true"></div>
+      <span class="corner corner-tl" aria-hidden="true"></span>
+      <span class="corner corner-tr" aria-hidden="true"></span>
+      <span class="corner corner-bl" aria-hidden="true"></span>
+      <span class="corner corner-br" aria-hidden="true"></span>
 
-      <img class="flower flower-top-left" src="assets/flowers/top-left.png" alt="" />
-      <img class="flower flower-top-right" src="assets/flowers/top-right.png" alt="" />
-      <img class="flower flower-bottom-left" src="assets/flowers/bottom-left.png" alt="" />
-      <img class="flower flower-bottom-right" src="assets/flowers/bottom-right.png" alt="" />
+      <img class="flower flower-top-left" src="assets/flowers/flower-top-left.png" alt="" />
+      <img class="flower flower-top-right" src="assets/flowers/flower-top-right.png" alt="" />
+      <img class="flower flower-bottom-left" src="assets/flowers/flower-bottom-left.png" alt="" />
+      <img class="flower flower-bottom-right" src="assets/flowers/flower-bottom-right.png" alt="" />
 
-      <header class="hero">
-        <div class="monogram">ن</div>
-        <p class="subtitle">NİŞANIMIZA<br>DAVETLİSİNİZ</p>
-        <p id="guestLine" class="guest-line"></p>
-        <h1><span>MUSTAFA</span><em>&</em><span>ZERRİN</span></h1>
-        <p class="message">Bu özel günümüzde sizleri de aramızda görmekten<br class="desktop-only"> mutluluk duyarız.</p>
-      </header>
+      <button class="music-btn" type="button" aria-label="Müzik" title="Müzik">♪</button>
 
-      <div class="separator"></div>
+      <main class="content">
+        <section class="hero">
+          <p class="eyebrow">NİŞANIMIZA</p>
+          <p class="eyebrow">DAVETLİSİNİZ</p>
+          <p id="guestLine" class="guest-line"></p>
 
-      <section class="details">
-        <article class="detail">
-          <span class="icon calendar"></span>
-          <b>TARİH</b>
-          <strong>31 Temmuz 2026</strong>
-          <small>CUMA</small>
-        </article>
-        <article class="detail">
-          <span class="icon clock"></span>
-          <b>SAAT</b>
-          <strong>19:30</strong>
-          <small>BAŞLANGIÇ</small>
-        </article>
-        <article class="detail">
-          <span class="icon pin"></span>
-          <b>MEKAN</b>
-          <strong>Barış’ın Çiftlik Evi</strong>
-          <small>EYÜPSULTAN / İSTANBUL</small>
-        </article>
-      </section>
+          <h1 class="names">
+            <span id="brideName">MUSTAFA</span>
+            <em>&amp;</em>
+            <span id="groomName">ZERRİN</span>
+          </h1>
 
-      <a class="route" target="_blank" rel="noopener" href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIRCAEQLhgKGA0YrwEYxwEYgAQyCggCEAAYChgWGB4yBwgDEAAY7wUyCggEEAAYgAQYogQyCggFEAAYgAQYogTSAQgzNTI2ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=tr&sa=X&geocode=KV-nZDJI_Z9AMWyVIHyoCR4D&daddr=A%C4%9Fa%C3%A7l%C4%B1,+karaa%C4%9Fa%C3%A7+sokak+No:16,+34076+Ey%C3%BCpsultan/%C4%B0stanbul">YOL TARİFİ AL</a>
+          <p class="intro">Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.</p>
+        </section>
 
-      <div class="separator"></div>
+        <div class="section-line" aria-hidden="true"></div>
 
-      <section class="countdown-wrap">
-        <h2>NİŞANIMIZA KALAN SÜRE</h2>
-        <div class="heart-line">♡</div>
-        <div class="countdown">
-          <div><strong id="days">00</strong><span>GÜN</span></div>
-          <div><strong id="hours">00</strong><span>SAAT</span></div>
-          <div><strong id="minutes">00</strong><span>DAKİKA</span></div>
-          <div><strong id="seconds">00</strong><span>SANİYE</span></div>
-        </div>
-      </section>
+        <section class="info-grid" aria-label="Nişan bilgileri">
+          <div class="info-item">
+            <img src="assets/icons/calendar.svg" alt="" class="info-icon" />
+            <span>TARİH</span>
+            <strong id="eventDateText">31 Temmuz 2026</strong>
+            <small id="eventDayText">Cuma</small>
+          </div>
+          <div class="info-item">
+            <img src="assets/icons/clock.svg" alt="" class="info-icon" />
+            <span>SAAT</span>
+            <strong id="eventTimeText">19:30</strong>
+            <small>Başlangıç</small>
+          </div>
+          <div class="info-item">
+            <img src="assets/icons/location.svg" alt="" class="info-icon" />
+            <span>MEKAN</span>
+            <strong id="venueName">Barış'ın Çiftlik Evi</strong>
+            <small id="venueCity">Eyüpsultan / İstanbul</small>
+          </div>
+        </section>
 
-      <div class="separator small"></div>
+        <a id="mapButton" class="direction-btn" href="#" target="_blank" rel="noopener">YOL TARİFİ AL</a>
 
-      <section class="rsvp">
-        <h2>KATILIM DURUMU</h2>
-        <div class="heart-line">♡</div>
-        <p>Lütfen katılım durumunuzu bildirir misiniz?</p>
-        <div class="actions">
-          <a id="joinButton" href="#" target="_blank" rel="noopener">✓ KATILIYORUM</a>
-          <a id="notJoinButton" href="#" target="_blank" rel="noopener">× KATILAMIYORUM</a>
-        </div>
-      </section>
+        <div class="section-line" aria-hidden="true"></div>
 
-      <footer>
-        <span>♡</span>
-        <p>Sevgilerimizle</p>
-      </footer>
-    </section>
-  </main>
+        <section class="countdown-section" aria-label="Geri sayım">
+          <h2>NİŞANIMIZA KALAN SÜRE</h2>
+          <div class="tiny-divider"><span></span><b>♡</b><span></span></div>
+          <div class="countdown">
+            <div><strong id="days">00</strong><span>GÜN</span></div>
+            <div><strong id="hours">00</strong><span>SAAT</span></div>
+            <div><strong id="minutes">00</strong><span>DAKİKA</span></div>
+            <div><strong id="seconds">00</strong><span>SANİYE</span></div>
+          </div>
+        </section>
+
+        <div class="section-line" aria-hidden="true"></div>
+
+        <section class="rsvp" aria-label="Katılım durumu">
+          <h2>KATILIM DURUMU</h2>
+          <div class="tiny-divider"><span></span><b>♡</b><span></span></div>
+          <p>Lütfen katılım durumunuzu bildirir misiniz?</p>
+          <div class="rsvp-actions">
+            <a id="joinButton" href="#" target="_blank" rel="noopener">✓ KATILIYORUM</a>
+            <a id="notJoinButton" href="#" target="_blank" rel="noopener">× KATILAMIYORUM</a>
+          </div>
+        </section>
+
+        <footer>
+          <span aria-hidden="true">♡</span>
+          <p>Sevgilerimizle</p>
+        </footer>
+      </main>
+    </article>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
