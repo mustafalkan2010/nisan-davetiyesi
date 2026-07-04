@@ -1,1 +1,2 @@
-GitHub repo kok dizinine assets klasorunu yukleyin. Dosyalar: assets/flowers/top-left.png, top-right.png, bottom-left.png, bottom-right.png, assets/textures/marble.jpg
+GitHub'a index.html, style.css, script.js ve assets klasörünü birlikte yükleyin.
+Kişiye özel link: https://mustafalkan2010.github.io/nisan-davetiyesi/?guest=Ahmet%20Yılmaz&id=1
