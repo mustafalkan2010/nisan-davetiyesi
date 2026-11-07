@@ -2,7 +2,7 @@ const inviteData = {
   bride: "ZERRİN",
   groom: "MUSTAFA",
   eventDate: "2026-11-22T18:00:00+03:00",
-  dateText: "31 Kasım 2026",
+  dateText: "22 Kasım 2026",
   dayText: "Pazar",
   timeText: "18:00",
   venue: "Assos Davet Evi",
