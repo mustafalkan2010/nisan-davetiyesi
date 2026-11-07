@@ -1,13 +1,13 @@
 const inviteData = {
   bride: "ZERRİN",
   groom: "MUSTAFA",
-  eventDate: "2026-07-31T19:30:00+03:00",
-  dateText: "31 Temmuz 2026",
-  dayText: "Cuma",
-  timeText: "19:30",
-  venue: "Barış'ın Çiftlik Evi",
-  city: "Eyüpsultan / İstanbul",
-  mapsUrl: "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIRCAEQLhgKGA0YrwEYxwEYgAQyCggCEAAYChgWGB4yBwgDEAAY7wUyCggEEAAYgAQYogQyCggFEAAYgAQYogTSAQgzNTI2ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=tr&sa=X&geocode=KV-nZDJI_Z9AMWyVIHyoCR4D&daddr=A%C4%9Fa%C3%A7l%C4%B1,+karaa%C4%9Fa%C3%A7+sokak+No:16,+34076+Ey%C3%BCpsultan/%C4%B0stanbul",
+  eventDate: "2026-11-22T18:00:00+03:00",
+  dateText: "31 Kasım 2026",
+  dayText: "Pazar",
+  timeText: "18:00",
+  venue: "Assos Davet Evi",
+  city: "Bağcılar / İstanbul",
+  mapsUrl: "https://share.google/Pnqkdl4Hhx3frFPsL",
   whatsappNumber: "905397233079"
 };
 
