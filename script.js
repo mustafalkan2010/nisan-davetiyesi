@@ -7,7 +7,7 @@ const inviteData = {
   timeText: "18:00",
   venue: "Assos Davet Evi",
   city: "Bağcılar / İstanbul",
-  mapsUrl: "https://share.google/Pnqkdl4Hhx3frFPsL",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Assos%20Davet%20Evi%20Bagcilar&query_place_id=ChIJNUlE3talyhQRu9fy10d6omk",
   whatsappNumber: "905397233079"
 };
 
